@@ -13,15 +13,15 @@ MonoBehaviour:
   m_Name: Test
   m_EditorClassIdentifier: 
   tuple:
-  - names: Molina
+  - names: OWO
     peep: {fileID: 11400000, guid: bfe1fc64028d8aa4e8403a266af4ac9f, type: 2}
-    sentences: Hey Riley! I think I made the inspector pretty to type in so yaaaaaaaaaaaaaay!
-      Wish I could use something cleaner like xml or json files, but that's too complicated
-      for me.
-  - names: Riley
+    sentences: I think i made the inspectow pwetty to type in so yaaaaaaaaaaaaaay!
+      wish i couwd use something cweanew wike xml ow json fiwes, but that's too compwicated
+      fow me.
+  - names: UWU
     peep: {fileID: 11400000, guid: 5a4de43af6f83944e8248763ba941163, type: 2}
-    sentences: '*Insert something Riley would say* And also lots of owo~ '
-  - names: Molina
+    sentences: Owo!!! i'm vewy happy fow you~ i can't wait untiw we finish uwu <3
+  - names: OWO
     peep: {fileID: 11400000, guid: bfe1fc64028d8aa4e8403a266af4ac9f, type: 2}
-    sentences: Anyways, thanks for helping me on this project! I hope you're having
-      fun. >~< I love you very much <3
+    sentences: Anyways, thanks fow hewping me on this pwoject! i hope you'we having
+      fun. >~<

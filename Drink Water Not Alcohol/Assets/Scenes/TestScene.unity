@@ -397,6 +397,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueManager: {fileID: 0}
   player: {fileID: 0}
+  barDisplay: 0
+  pos: {x: 20, y: 40}
+  size: {x: 60, y: 20}
+  emptyTex: {fileID: 0}
+  fullTex: {fileID: 0}
 --- !u!1 &254782874
 GameObject:
   m_ObjectHideFlags: 0
