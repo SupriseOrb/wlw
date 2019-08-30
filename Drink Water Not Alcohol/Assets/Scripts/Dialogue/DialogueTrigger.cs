@@ -6,13 +6,16 @@ public class DialogueTrigger : MonoBehaviour
 {
     public Dialogue dialogue;
 
+    //For changing the mouse cursor!
     public Texture2D cursorTexture;
     public CursorMode cursorMode = CursorMode.Auto;
     public Vector2 hotSpot = Vector2.zero;
 
     public bool hasMessage = true;
     public bool isInteractable;
+    public bool wait = false;
 
+    //OWO
     public PlayerController player;
     public DialogueManager dialogueManager;
 
@@ -32,29 +35,37 @@ public class DialogueTrigger : MonoBehaviour
     {
         isInteractable = true;
     }
+
+    public void ChangeWaitFalse(){
+        wait = false;
+    }
+
+    public void ChangeWaitTrue(){
+        wait = true;
+    }
+
+    //For Cursors
     void OnMouseEnter()
     {
-        if(!player.inConversation && hasMessage)
+        //if(!player.inConversation && hasMessage)
+        if(hasMessage)
         {
-            Debug.Log("Mouse is over GameObject");
             Cursor.SetCursor(cursorTexture, hotSpot, cursorMode);
         }
     }
 
     void OnMouseExit()
     {
-        Debug.Log("Mouse is no longer on GameObject");
         Cursor.SetCursor(null, Vector2.zero, cursorMode);
         
     }
 
     void OnMouseDown()
     {
-        if(!player.inConversation && hasMessage && isInteractable){
-            Debug.Log("I've been clicked!");
-            player.inConversation = true;
+        if(!player.inConversation && hasMessage && isInteractable && !wait){
+            player.ChangeInConversationTrue(); //A little better
 
-            Cursor.SetCursor(null, Vector2.zero, cursorMode);
+            //Cursor.SetCursor(null, Vector2.zero, cursorMode);
             TriggerDialogue();
 
         }
@@ -62,7 +73,7 @@ public class DialogueTrigger : MonoBehaviour
     }
     public void TriggerDialogue()
     {
-        dialogueManager.StartDialogue(dialogue);
+        dialogueManager.StartDialogue(dialogue, this);
     }
 
 }
