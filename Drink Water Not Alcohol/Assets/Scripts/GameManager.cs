@@ -31,10 +31,10 @@ public class GameManager : MonoBehaviour
 
     void continueDialogue()
     {   
-        Debug.Log("continueDialogue()");
         //if(player.canProceed && player.inConversation && (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space)))
         if(player.canProceed && player.inConversation && Input.anyKeyDown && !Input.GetKeyDown(KeyCode.Escape))
         {
+            Debug.Log("Advancing to next dialogue");
             dialogueManager.DisplayNextSentences();
         }
     }
