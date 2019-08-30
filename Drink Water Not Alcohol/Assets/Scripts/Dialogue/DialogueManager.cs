@@ -9,6 +9,7 @@ public class DialogueManager : MonoBehaviour
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI dialogueText;
     private Queue<string> sentences;
+    private Queue<string> names;
 
     public Animator animator;
 
@@ -19,20 +20,32 @@ public class DialogueManager : MonoBehaviour
     {
         player = FindObjectOfType<PlayerController>();
         sentences = new Queue<string>();
+        names = new Queue<string>();
     }
 
     public void StartDialogue(Dialogue dialogue)
     {
         animator.SetBool("isOpen", true);
-        nameText.text = dialogue.name;
-        Debug.Log("Starting conversation with " + dialogue.name);
+        //nameText.text = dialogue.name;
+        //Debug.Log("Starting conversation with " + dialogue.name);
 
+        names.Clear();
         sentences.Clear();
-        foreach (string sentence in dialogue.sentences)
+        foreach(DialogueTuples dT in dialogue.tuple)
+        {
+            sentences.Enqueue(dT.sentences);
+            names.Enqueue(dT.names);
+        }
+        DisplayNextSentences();
+        /*foreach (string sentence in dialogue.sentences)
         {
             sentences.Enqueue(sentence);
         }
-        DisplayNextSentences();
+        foreach (string n in dialogue.names)
+        {
+            names.Enqueue(n);
+        }
+        DisplayNextSentences();*/
     }
 
     public void DisplayNextSentences()
@@ -43,6 +56,7 @@ public class DialogueManager : MonoBehaviour
             return;
         }
         string sentence = sentences.Dequeue();
+        nameText.text = names.Dequeue();
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
         //dialogueText.text = sentence;
@@ -65,6 +79,7 @@ public class DialogueManager : MonoBehaviour
             }
             
         }
+        player.canProceed = true;
     }
 
     public void EndDialogue()
