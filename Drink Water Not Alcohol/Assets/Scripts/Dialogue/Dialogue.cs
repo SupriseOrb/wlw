@@ -4,9 +4,9 @@ using UnityEngine;
 
 [System.Serializable]
 public class DialogueTuples{
-    public string names;
+    //public string names;
     public NPC peep;
-
+    //public AudioClip sfx;
     [TextArea(3,10)]
     public string sentences;
 }
@@ -15,6 +15,7 @@ public class DialogueTuples{
 public class Dialogue : ScriptableObject
 {
     public DialogueTuples[] tuple;
+    public int deltaCourage;
     
 }
 

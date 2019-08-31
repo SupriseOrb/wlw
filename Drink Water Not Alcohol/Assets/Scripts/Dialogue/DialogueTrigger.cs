@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class DialogueTrigger : MonoBehaviour
 {
     public Dialogue dialogue;
@@ -18,11 +18,13 @@ public class DialogueTrigger : MonoBehaviour
     //OWO
     public PlayerController player;
     public DialogueManager dialogueManager;
+    public GameManager gameManager;
 
-     void Start()
+     void Awake()
     {
         player = FindObjectOfType<PlayerController>();
         dialogueManager = FindObjectOfType<DialogueManager>();
+        gameManager = FindObjectOfType<GameManager>();
         isInteractable = false;
     }
 
@@ -45,12 +47,13 @@ public class DialogueTrigger : MonoBehaviour
     }
 
     //For Cursors
-    void OnMouseEnter()
+    void OnMouseOver()
     {
-        //if(!player.inConversation && hasMessage)
         if(hasMessage)
         {
             Cursor.SetCursor(cursorTexture, hotSpot, cursorMode);
+        }else{
+            Cursor.SetCursor(null, Vector2.zero, cursorMode);
         }
     }
 
@@ -63,17 +66,25 @@ public class DialogueTrigger : MonoBehaviour
     void OnMouseDown()
     {
         if(!player.inConversation && hasMessage && isInteractable && !wait){
-            player.ChangeInConversationTrue(); //A little better
-
-            //Cursor.SetCursor(null, Vector2.zero, cursorMode);
             TriggerDialogue();
-
         }
         
     }
     public void TriggerDialogue()
     {
+        player.ChangeInConversationTrue(); //A little better
         dialogueManager.StartDialogue(dialogue, this);
+    }
+
+    public void ChangeHasMessageFalse(){
+        if(this.CompareTag("Flora")){
+            hasMessage = true;
+            if(gameManager.endGoalTriggered){
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+            }
+        }else{
+            hasMessage = false;
+        }
     }
 
 }

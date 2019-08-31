@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     public bool inConversation = false;
     public bool canProceed;
 
-    void Start()
+    void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         dialogueManager = FindObjectOfType<DialogueManager>();
@@ -42,14 +42,16 @@ public class PlayerController : MonoBehaviour
 
     void OnTriggerEnter2D (Collider2D other)
     {
-        if(other.gameObject.CompareTag("Interactable")){
+        if(other.gameObject.CompareTag("Interactable") ||
+            other.gameObject.CompareTag("Flora")){
             other.gameObject.GetComponent<DialogueTrigger>().ChangeInteractableTrue();
         }
     }
 
      void OnTriggerExit2D (Collider2D other)
      {
-         if(other.gameObject.CompareTag("Interactable")){
+         if(other.gameObject.CompareTag("Interactable") ||
+            other.gameObject.CompareTag("Flora")){
             other.gameObject.GetComponent<DialogueTrigger>().ChangeInteractableFalse();
         }
      }

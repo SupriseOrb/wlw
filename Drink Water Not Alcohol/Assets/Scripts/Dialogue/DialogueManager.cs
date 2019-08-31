@@ -9,10 +9,10 @@ public class DialogueManager : MonoBehaviour
     //For changing dialogue box text!
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI dialogueText;
-    public UnityEngine.UI.Image profile;
+    public UnityEngine.UI.Image profileImage;
     private Queue<string> sentences;
     private Queue<string> names;
-    private Queue<NPC> npcs;
+    private Queue<Sprite> profiles;
     private DialogueTrigger currentDialogueTrigger;
 
     //For dialogue box animations!
@@ -20,13 +20,18 @@ public class DialogueManager : MonoBehaviour
 
     //Why do I have a reference to the player??? sighs
     public PlayerController player;
+    public GameManager gameManager;
 
-    void Start()
-    {
+    void Awake(){
         player = FindObjectOfType<PlayerController>();
+        gameManager = FindObjectOfType<GameManager>();
         sentences = new Queue<string>();
         names = new Queue<string>();
-        npcs = new Queue<NPC>();
+        profiles = new Queue<Sprite>();
+    }
+    void Start()
+    {
+        
     }
 
     public void StartDialogue(Dialogue dialogue, DialogueTrigger dialogueTrigger)
@@ -39,8 +44,8 @@ public class DialogueManager : MonoBehaviour
         foreach(DialogueTuples dT in dialogue.tuple)
         {
             sentences.Enqueue(dT.sentences);
-            names.Enqueue(dT.names);
-            npcs.Enqueue(dT.peep);
+            names.Enqueue(dT.peep.name);
+            profiles.Enqueue(dT.peep.artwork);
         }
         DisplayNextSentences();
     }
@@ -54,7 +59,7 @@ public class DialogueManager : MonoBehaviour
         }
         string sentence = sentences.Dequeue();
         nameText.text = names.Dequeue();
-        profile.sprite = npcs.Dequeue().artwork;
+        profileImage.sprite = profiles.Dequeue();
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
     }
@@ -67,7 +72,6 @@ public class DialogueManager : MonoBehaviour
         { 
             dialogueText.text += letter;
             yield return null;
-            //if(Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))
             if(Input.anyKeyDown && !Input.GetKeyDown(KeyCode.Escape))
             {
                 dialogueText.text = sentence;
@@ -84,7 +88,8 @@ public class DialogueManager : MonoBehaviour
         animator.SetBool("isOpen", false);
         player.ChangeInConversationFalse(); //A little better
         player.ChangeCanProceedFalse(); //A little better
-        StartTimer(); //so that you don't get stuck in infinite conversation loop
+        currentDialogueTrigger.ChangeHasMessageFalse();
+        gameManager.gainCourage(currentDialogueTrigger.dialogue.deltaCourage);
     }
 
     public void StartTimer(){

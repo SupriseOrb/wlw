@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5d1ac83b92c1dc4da005d04b715d99a, type: 3}
+  m_Name: Intro
+  m_EditorClassIdentifier: 
+  tuple:
+  - peep: {fileID: 11400000, guid: 25b1914d55325c04bbfeb3f469cc010f, type: 2}
+    sentences: Hi everyone, thank you for joining us for the engagement party! It
+      means a lot to me to celebrate with all of you. Please enjoy the rest of the
+      party, but also take care of yourselves!
+  - peep: {fileID: 11400000, guid: e9dffaecc5cea7642ad42f6200b73583, type: 2}
+    sentences: Oh lord, there she is.
+  - peep: {fileID: 11400000, guid: e9dffaecc5cea7642ad42f6200b73583, type: 2}
+    sentences: Flora, the most beautiful person I've ever seen.
+  - peep: {fileID: 11400000, guid: e9dffaecc5cea7642ad42f6200b73583, type: 2}
+    sentences: She's absolutely radiant!
+  - peep: {fileID: 11400000, guid: e9dffaecc5cea7642ad42f6200b73583, type: 2}
+    sentences: Gods, what do even you say to a person like her? I need to tell her
+      how I feel.
+  - peep: {fileID: 11400000, guid: e9dffaecc5cea7642ad42f6200b73583, type: 2}
+    sentences: IwanttotalktohertosaythatIthinkIloveherbutwhatifshedoesn'tlikemebackAndshesengagedthatscomplicatedWhatdoIsayWhatifIforgetwhattosayHowdoyoutalktopeopleagainohgodshelpme
+  - peep: {fileID: 11400000, guid: 776d3a7c2cb665f4486a2dd35f974627, type: 2}
+    sentences: Are you okay Rheis? You're talking to yourself again. I'd say you could
+      use a drink, but maybe you've had enough already.
+  - peep: {fileID: 11400000, guid: e9dffaecc5cea7642ad42f6200b73583, type: 2}
+    sentences: "I'm fine! Fine fine fine! \u266A"
+  - peep: {fileID: 11400000, guid: 776d3a7c2cb665f4486a2dd35f974627, type: 2}
+    sentences: You could just uh, talk to her?
+  - peep: {fileID: 11400000, guid: e9dffaecc5cea7642ad42f6200b73583, type: 2}
+    sentences: You know, maybe I will, random person!
+  - peep: {fileID: 11400000, guid: e9dffaecc5cea7642ad42f6200b73583, type: 2}
+    sentences: Or what if I just, get around to that when I'm ready.
+  - peep: {fileID: 11400000, guid: e9dffaecc5cea7642ad42f6200b73583, type: 2}
+    sentences: I'llneverbereadyohgodshelp
+  - peep: {fileID: 11400000, guid: e9dffaecc5cea7642ad42f6200b73583, type: 2}
+    sentences: Maybe if I talk to some other people, I'll build up the courage to
+      talk to her.
+  deltaCourage: 10

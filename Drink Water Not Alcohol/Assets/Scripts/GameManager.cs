@@ -6,38 +6,55 @@ public class GameManager : MonoBehaviour
 {
     public DialogueManager dialogueManager;
     public PlayerController player;
+    public DialogueTrigger intro;
+    public DialogueTrigger flora;
+    public Dialogue floraConclusion;
+    public DialogueTrigger readyForFlora;
+    public bool endGoalTriggered = false;
 
     //For Courage Bar
-    public float barDisplay; //current progress
-    public Vector2 pos = new Vector2(20,40);
-    public Vector2 size = new Vector2(60,20);
-    public Texture2D emptyTex;
-    public Texture2D fullTex;
+    public int intialCourage = 0;
+    public int currentCourage; //current progress
+    public UnityEngine.UI.Slider courageSlider;
+    
 
-    void Start()
-    {
+    void Awake(){
         dialogueManager = this.GetComponent<DialogueManager>();
         player = FindObjectOfType<PlayerController>();
+        currentCourage = intialCourage;
+    }
+    void Start()
+    {
+        
+        intro.TriggerDialogue();
     }
 
-    // void FixedUpdate()
-    // {
-            
-    // }
     void Update()
     {
         continueDialogue();
     }
-
     void continueDialogue()
     {   
-        //if(player.canProceed && player.inConversation && (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space)))
         if(player.canProceed && player.inConversation && Input.anyKeyDown && !Input.GetKeyDown(KeyCode.Escape))
         {
-            Debug.Log("Advancing to next dialogue");
             dialogueManager.DisplayNextSentences();
         }
     }
+    void EndGoalMet(){
+        flora.dialogue = floraConclusion;
+        endGoalTriggered = true;
+        readyForFlora.TriggerDialogue();
+        
+    }
 
+    public void gainCourage(int deltaCourage){
+        if(!endGoalTriggered){
+            currentCourage += deltaCourage;
+            courageSlider.value = currentCourage;
+            if(currentCourage >= 100){
+                EndGoalMet();
+            }
+        }
+    }
     
 }

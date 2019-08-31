@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5d1ac83b92c1dc4da005d04b715d99a, type: 3}
+  m_Name: 4
+  m_EditorClassIdentifier: 
+  tuple:
+  - peep: {fileID: 11400000, guid: 4e7ca009bc7458f499a4351b7d74eded, type: 2}
+    sentences: You're trying to figure out how to talk to Flora aren't you.
+  - peep: {fileID: 11400000, guid: e9dffaecc5cea7642ad42f6200b73583, type: 2}
+    sentences: How did you know? Did I tell you already?
+  - peep: {fileID: 11400000, guid: 4e7ca009bc7458f499a4351b7d74eded, type: 2}
+    sentences: Rheis, you practically wear it on your sleeve.
+  - peep: {fileID: 11400000, guid: 4e7ca009bc7458f499a4351b7d74eded, type: 2}
+    sentences: Here, pretend I'm Flora, practice what you want to say to her.
+  - peep: {fileID: 11400000, guid: 4e7ca009bc7458f499a4351b7d74eded, type: 2}
+    sentences: '"Rheis, it''s nice to see you love."'
+  - peep: {fileID: 11400000, guid: e9dffaecc5cea7642ad42f6200b73583, type: 2}
+    sentences: I...You...Uhh...
+  - peep: {fileID: 11400000, guid: 4e7ca009bc7458f499a4351b7d74eded, type: 2}
+    sentences: Sheesh, it's worse than I thought. Keep trying Rheis.
+  deltaCourage: 10

@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5d1ac83b92c1dc4da005d04b715d99a, type: 3}
+  m_Name: 9
+  m_EditorClassIdentifier: 
+  tuple:
+  - peep: {fileID: 11400000, guid: e9dffaecc5cea7642ad42f6200b73583, type: 2}
+    sentences: I think I'm in love with Flora.
+  - peep: {fileID: 11400000, guid: 8422992234487b545a4a951b5ceb58a8, type: 2}
+    sentences: Yeah, I know. You were talking about her last week too.
+  - peep: {fileID: 11400000, guid: 8422992234487b545a4a951b5ceb58a8, type: 2}
+    sentences: And the one before that.
+  - peep: {fileID: 11400000, guid: e9dffaecc5cea7642ad42f6200b73583, type: 2}
+    sentences: Do you think she likes me?
+  - peep: {fileID: 11400000, guid: 8422992234487b545a4a951b5ceb58a8, type: 2}
+    sentences: I sure hope so. Gods, do you talk about anything else?
+  - peep: {fileID: 11400000, guid: e9dffaecc5cea7642ad42f6200b73583, type: 2}
+    sentences: No, no I do not.
+  deltaCourage: 10

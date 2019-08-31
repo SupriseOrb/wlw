@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d41ae7ccdd7f6f408b3d249433f71ae, type: 3}
   m_Name: TestNPC2
   m_EditorClassIdentifier: 
-  name: Riley Rount
+  name: Rainbow Rounds
   artwork: {fileID: 21300000, guid: fb875c0911f6c954e8a4e5e09cbadf3f, type: 3}

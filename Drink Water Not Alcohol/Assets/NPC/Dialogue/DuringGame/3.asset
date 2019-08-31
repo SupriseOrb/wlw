@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5d1ac83b92c1dc4da005d04b715d99a, type: 3}
+  m_Name: 3
+  m_EditorClassIdentifier: 
+  tuple:
+  - peep: {fileID: 11400000, guid: c4e741d44fa1d27439596e19e1a0ee58, type: 2}
+    sentences: Hey Rheis, you look great!
+  - peep: {fileID: 11400000, guid: c4e741d44fa1d27439596e19e1a0ee58, type: 2}
+    sentences: And Flora's looking pretty sharp herself, eh?
+  - peep: {fileID: 11400000, guid: e9dffaecc5cea7642ad42f6200b73583, type: 2}
+    sentences: Yeah. She could make the plainest look stand out.
+  - peep: {fileID: 11400000, guid: e9dffaecc5cea7642ad42f6200b73583, type: 2}
+    sentences: You, me, that person over there, me, we can't even compare to how pretty
+      Flora is.
+  - peep: {fileID: 11400000, guid: c4e741d44fa1d27439596e19e1a0ee58, type: 2}
+    sentences: Hey, don't sell yourself short Rheis.
+  - peep: {fileID: 11400000, guid: e9dffaecc5cea7642ad42f6200b73583, type: 2}
+    sentences: I will do all the selling, you can't stop me.
+  deltaCourage: 10

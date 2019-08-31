@@ -12,7 +12,6 @@ public class MainMenu : MonoBehaviour
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         if(controlPanel.activeInHierarchy && Input.GetKeyDown(KeyCode.Escape)){
@@ -44,9 +43,5 @@ public class MainMenu : MonoBehaviour
 
     public void CloseCreditsPanel(){
         creditsPanel.SetActive(false);
-    }
-
-    public void CreditButton(){
-
     }
 }
